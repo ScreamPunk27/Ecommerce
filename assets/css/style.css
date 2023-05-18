@@ -276,16 +276,17 @@ nav{
 }
 
 .container-cart{
-    display: none;
+    display:none;
     position: absolute;
-    top: 0;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
-    height: 80%;
+    height: 65%;
     margin-top: 1rem;
     border-radius: 10px;
     background-color: #fff;
+    z-index: 500;
 }
 
 
