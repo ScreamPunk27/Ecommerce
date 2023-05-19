@@ -42,9 +42,21 @@
     margin-top: 2rem;
 }
 
-.thumbnail-img-desktop{
+.mythumb{
+    background-color: #fff;
     width: 70px;
     border-radius: 5px;
+}
+
+.thumbnail-img-desktop{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.thumbnail-img-desktop:hover{
+    filter:opacity(.6);
 }
 
 .container-carousel-desktop-img{
@@ -61,6 +73,8 @@
     background-color: #fff;
     cursor: pointer;
 }
+
+
 
 #btn-previous-desktop{
     position: absolute;
