@@ -6,6 +6,7 @@ const addButton=document.getElementById('btn-add');
 const deleteSneakers=document.querySelector('.article-top__btn');
 
 let number=0;
+let saveNumber=[];
 
 document.querySelector('.cart-icon-count').style.display="none";
 
@@ -14,12 +15,21 @@ const mountCount = ()=>{
 }
 
 const mountCart = (number)=>{
+
+    saveNumber.push(number);
+        let sum=0;
+        
+        for (let i=0;i<saveNumber.length;i++){
+            sum += saveNumber[i];
+        }
+
     if(number>0){
         document.querySelector('.cart-icon-count').style.display="flex";
-        document.querySelector('.cart-icon-count').textContent=number;
+        document.querySelector('.cart-icon-count').textContent=sum;
     }else{
         document.querySelector('.cart-icon-count').style.display="none";
     }
+
 }
 
 const mountProducts = (products)=>{
@@ -52,10 +62,13 @@ minus.addEventListener('click',()=>{
 addButton.addEventListener('click',()=>{
     mountCart(number);
     mountProducts(number);
+    number=0;
+    mountCount();
 
 });
 
 deleteSneakers.addEventListener('click',()=>{
+    saveNumber=[];
     number=0;
     mountCount();
     mountCart(number);
